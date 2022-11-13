@@ -1,0 +1,25 @@
+
+<div class="user-teaser"> 
+    <a href="athletes/{{id}}" class="wrapping-anchor" data-navigate data-slug-type="user">
+        <div class="teaser-img-container">
+            <div class="profile-image small lazyload" data-bg="{{user.thumbnail_url}}"></div>
+        </div>        
+        <div class="user-text">
+        	<div class="ident pull-left">
+				<h4 class="user-name">{{user.full_name}}</h4>
+				{{#if is_admin}}<div class="team-losenge coach">Coach</div>{{/if}}
+				{{#if teams}}
+				<div class="user-teams">					
+					{{#each teams}}
+					<div class="team-losenge">{{name}}</div>
+					{{/each}}
+				</div>
+				{{/if}}
+			</div>
+        </div>
+	        <div class="stats">
+	        	<div class="stat num">64</div>
+	        	<div class="stat num">Last active today</div>
+	        </div>        
+    </a>
+</div>

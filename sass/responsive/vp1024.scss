@@ -1,0 +1,86 @@
+@media(max-width: 1024px) {
+    h1 {
+        font-size: 2em;
+        &.big {
+            font-size: 2em;
+        }
+    }
+    .center-column {
+        &.wide, &.spill {
+            max-width: $stem;
+        }
+    }
+    .search-form {
+        input[type=text] {
+            width: 100%;
+        }
+    }
+    .add-image-tooltip {
+        margin-left: -370px;
+    }
+    .delete-img {
+        left: -45px;
+    }
+    .main-content {
+        position: relative;
+        width: auto;
+    }
+    .settings-nav {
+        display: none;
+    }
+    .the-feet {
+        .actions {
+            li.act {
+                &.small {
+                    margin: 0 4px;
+                }
+                .text {
+                    font-size: 1.45em;  
+                }
+            }
+        }
+    }
+    .cover-page {
+        .mobile {
+            display: inline;
+        }
+        .desktop {
+            display: none;
+        }
+    }
+    .hero {
+        .hero-blurb {
+            font-size: 1.1em;
+        }        
+        &.partial {
+            height: 60vh;
+            max-height: 600px;
+            .hero-image-wrapper {
+                height: 60vh;
+                max-height: 600px;
+            }
+        }        
+        &.fixed { // this is a full-page hero
+            position: relative;
+            min-height: $partialHeroDepth;
+            max-height: 800px;
+            height: $partialHeroDepth;
+            .hero-image-wrapper {
+                height: $partialHeroDepth;
+                min-height: $partialHeroDepth;
+            }        
+        }
+    }
+    .main-body {
+        &.with-fixed-hero { // there is a full-page hero above
+            margin-top: inherit;
+        }
+    }
+    .page-card {
+        max-height: 800px;
+        position: relative;
+        .card-image-wrapper {
+            max-height: 800px;
+        }
+    }
+}

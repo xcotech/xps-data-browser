@@ -1,0 +1,100 @@
+<div class="page-container pageContainer" id="activity">
+	<div class="activity-detail activityDetail">
+
+<!-- 		{{#with session}}
+		<div class="sub-nav subNav">
+			{{>session-subnav}}
+		</div>
+		{{/with}}
+ -->
+	    <div class="main-body activity-body mainBody">
+	    	
+	    	<div class="plot-header plotHeader{{#compare type_definition.activity_type 'sprint'}} with-nav{{/compare}}">		    
+		    	{{#compare type_definition.activity_type 'sprint'}}<div class="plot-nav plotNav"></div>{{/compare}}
+				<div class="plot-container" id="plotContainer"></div>
+				<div class="selector-container selectorContainer"></div>
+			
+				<div class="plot-subhead plotSubhead">
+					<div class="right-side">
+						<div class="plot-sub-item plot-sub-action">
+							<button class="btn btn-dark">Compare with...</button>
+						</div>
+						<div class="plot-sub-item series-selector-group select">
+							<button class="btn btn-subdued selector-btn" data-actionbind data-action="toggleSeriesSelector">Series</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+<div class="meta-belt soup">
+
+			<div class="center-column">
+
+				<div class="activity-user">
+			        <div class="teaser-img-container">
+			            <div class="profile-image small lazyload" data-bg="{{user.thumbnail_url}}"></div>
+			        </div>        
+			        <div class="user-text">
+			        	<div class="ident pull-left">
+							<h4 class="user-name">{{user.full_name}}</h4>
+							{{#if is_admin}}<div class="team-losenge coach">Coach</div>{{/if}}
+
+							{{#if teams}}
+							<div class="user-teams">					
+								{{#each teams}}
+								<div class="team-losenge">{{name}}</div>
+								{{/each}}
+							</div>
+							{{/if}}
+						</div>
+			        </div>
+
+					<div class="subhead activity-type">{{type_definition.activity_type}}</div>
+					<div class="subhead activity-meta">
+						{{#compare type_definition.activity_type 'jump'}}{{type_definition.orientation_type}}{{data_summary.height}} {{data_summary.distance}} {{/compare}}
+						{{#compare type_definition.activity_type 'sprint'}}{{type_definition.distance}}{{initial type_definition.measurement_type}}{{type_definition.start_type}}  {{decimalPlaces data_summary.total_time 2}}s{{/compare}}
+					</div>
+				</div>
+			</div>
+
+			<div class="center-column wide">
+
+				<div class="activity-kpis centered">
+					<div class="kpi">
+						<span class="stat-label">Max velocity</span>
+						<span class="num">{{decimalPlaces data_summary.max_velocity 2}}<span class="units">m/s</span></span>
+					</div>
+					<div class="kpi">
+						<span class="stat-label">Stride frequency</span>
+						<span class="num">{{decimalPlaces data_summary.strides.frequency_median 1}}<span class="units">/s</span></span>
+					</div>
+					<div class="kpi">
+						<span class="stat-label">Contact time</span>
+						<span class="num">{{decimalPlaces data_summary.strides.contact_median 2}}<span class="units">s</span></span>
+					</div>
+					<div class="kpi">
+						<span class="stat-label">Stride length</span>
+						<span class="num">{{decimalPlaces data_summary.strides.length_median 2}}<span class="units">m</span></span>
+					</div>						
+					<div class="kpi">
+						<span class="stat-label">Ground accel</span>
+						<span class="num">{{decimalPlaces data_summary.ground_accel_median 2}}<span class="units">m/s<super>2</super></span></span>
+					</div>	
+
+				</div>
+			</div>
+
+		</div>	
+
+		
+				<div class="body-section">				
+					<div class="center-column">
+						<!-- Annotations -->
+					</div>
+				</div>
+
+	    </div>
+
+	</div>
+</div>

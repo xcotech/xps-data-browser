@@ -1,0 +1,250 @@
+@media(max-width: 480px) {
+    h2 {
+        font-size: 1.25em;
+    }
+    .nav-search {
+        &.open {
+            position: fixed;
+            left: 0;
+            right: 0;
+            form {
+                background-color: $white;
+                .search-term {
+                    padding: 0 24px;
+                }
+            }
+            .nav-but {
+                left: 20px;
+            }
+
+        }
+    }
+    .main-post {
+        padding: 92px 0 0;
+    }    
+    .post-title {
+        font-size: 1.7em;
+    }
+    .post-subtitle {
+        font-size: 1.15em;
+        line-height: 1.1em;
+    }
+    // Login
+    .registration-wrapper {
+        width: 340px;
+        margin-left: -170px;
+    }
+    $basePostFontSize: 1.1em;
+    .collection-teaser {
+        width: 100%;
+        padding: 0;
+        margin: 0 0 24px;
+    }
+    .navbar {
+        .look-here {
+            display: none;
+        }
+    }
+    .primary-actions {
+        .primary-act {
+           width: 72px;
+        }
+    }
+    .footer-wrapper {
+        .social-share {
+            float: left;
+            clear: both;
+            margin: 8px 0 0 0;
+        }
+    }
+    .card-header {
+        .card-details {
+        top: 160px;
+        }
+        .teaser-auth {
+            margin: 12px 0 0;
+        }
+    }
+    .story-teaser {
+        h3 {
+            font-size: 1.4em
+        }
+    }
+    .article-title, .static-header h1 {
+        font-size: 2em;
+    }
+    .article-byline {
+        font-size: 1.45em;
+    }
+    .author-feet {
+        padding: 4px 0;
+        margin: 0;
+    }
+    .author-block {
+        min-height: 30px;
+        .byline {
+            margin-left: 72px;
+        }
+        .profile-image {
+            width: 54px;
+            padding-bottom: 54px;
+
+        }
+        .user-name {
+
+        }
+    }
+    .card-header {
+        font-size: 1.9em;
+    }
+    .card-standfirst {
+        font-size: 1.25em;
+        line-height: 1.25em; 
+    }
+    .card-content {
+        top: 0;
+        margin-top: 80px;
+    }
+
+    .navbar .container {
+        margin: 0 5px;
+        .brand {
+        }
+    }
+
+    .navbar .nav-item {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .no-nav {
+        footer.page-footer {
+            bottom: 0;
+            .pull-right {
+                display: none;
+            }
+        }
+    }
+    .profile-card {
+        .profile-image {
+            float: none;
+        }
+    }
+    .ad-block.inline .read-more-list {
+        display: none;
+    }
+    .cover-page {
+        .main-content {
+            .logo {
+                img {
+                    height: 25px;
+                }
+            }
+        }
+    }
+    .left-nav {
+        li {
+            clear: none;
+            margin-right: 10px;
+            width: 120px;
+            a {
+                padding: 3px 10px;
+            }
+        }
+    }
+    .navbar .brand {
+        margin-left: 0;
+        //width: 50px;
+        //background-position: -72px 0;
+    }
+    .teaser.small {
+        .thumbnail-image {
+            float: left;
+        }
+    }
+    .cover-header .cover-content {
+        .page-name {
+            font-size: 2.1em;
+        }
+        .page-descript {
+            font-size: 1.4em;
+        }
+    }
+    .card-details {
+        .hero-title, .card-title {
+            font-size: 1.85em;
+        }
+        .card-subtitleion-container {
+            font-size: 1.2em;
+        }
+    }
+    .hero-content-wrapper {
+        .headline {
+            font-size: 2.1em;
+        }
+        p {
+            font-size: 1.4em;
+        }
+    }
+    .user-card {
+        width: auto;
+        margin: 0 auto;
+    }
+    .profile-card {
+        .user-name {
+            font-size: 2.1em;
+        }
+        .byline {
+            font-size: 1.4em;
+        }
+
+    }
+    .piano-key {
+        h2 {
+            font-size: 1.8em;
+        }
+        p {
+            font-size: 1.3em;
+        }
+        .other-links {
+            text-align: center;
+            li {
+                display: block;
+            }
+        }
+    }
+    .btn-hero {
+        font-size: 1em;
+        padding: 4px 8px;
+    }
+    .search-form {
+        input[type=text] {
+            width: 100%;
+            font-size: 2em;
+        }
+    }
+    .modal {
+        .modal-header {
+            &:before {
+                left: 174px;
+            }
+            &:after {
+                left: 175px;
+            }
+        }
+        .modal-content {
+            padding: 30px 0;
+            .response-teaser {
+                .texty {
+                    width: auto;
+                }
+            }
+            .user-list {
+                padding: 0 12px;
+            }
+        }
+        .collection-teaser {
+            width: 344px;
+        }
+    }
+}

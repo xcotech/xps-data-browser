@@ -1,0 +1,26 @@
+<div class="page-container pageContainer" id="user-detail">                
+    <div class="page-wrapper">        
+
+        <header class="profile-header hero-content profileHeader">
+            <div class="profile-card centered detailCenter heroContent" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <div class="profile-text center-column centered profileText {{#if hero.imageUrl}}if{{/if}}">
+                    <h1 class="user-name fullName heroContentEl">{{user.full_name}}</h1>
+                </div>
+
+                <div class="profile-image-container profileImageContainer heroContentEl{{#unless mainImageUrl}} no-image{{/unless}}" data-switch="tab" data-target="#home-{{id}}">
+                    <img src="{{mainImageUrl}}" style="background-image: url('{{mainImageUrl}}');" alt="{{fullName}}" title="{{fullName}}" class="profile-image profileImage"/>                           
+                </div> 
+            </div> <!-- /.profile-card -->
+        </header>
+
+        <div class="main-body mainBody">
+            <div class="center-column">
+                <div class="pager-container pagerContainer">
+                    <div class="paginated-list paginatedList"></div>
+                </div>                
+                
+            </div>
+        </div>            
+
+    </div>
+</div>

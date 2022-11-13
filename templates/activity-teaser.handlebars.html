@@ -1,0 +1,42 @@
+<div class="activity-teaser activityTeaser" data-id={{id}}>
+<a href="/activity/{{id}}" class="wrapping-anchor" data-navigate>
+	
+	<div class="teaser-head">
+		<div class="activity-user lefty">
+	        <div class="teaser-img-container">
+	            <div class="profile-image small lazyload" data-bg="{{user.thumbnail_url}}"></div>
+	        </div>        
+	        <div class="user-meta">
+	        	<div class="user-name">{{user.full_name}}</div>
+	        	<div class="created">{{shortTime created}}</div>
+	        </div>
+
+        </div>        
+        <div class="stats righty">
+        	
+        	{{#compare type_definition.start_type 'beep'}}<div class="stat num light">{{decimalPlaces data_summary.reaction_time 3}}</div>{{/compare}}
+        	<div class="stat num main">{{#compare type_definition.activity_type 'sprint'}}{{decimalPlaces data_summary.total_time 2}}s{{/compare}}</div>
+		</div>
+	</div>
+
+	<div class="inner-detail">
+		<div class="body-stat">
+			<span class="stat-label">Max velocity</span>
+			<span class="num">{{decimalPlaces data_summary.max_velocity 3}}<span class="units">m/s</span></span>
+		</div>
+		<div class="body-stat">
+			<span class="stat-label">Stride frequency</span>
+			<span class="num">{{decimalPlaces data_summary.strides.frequency_median 3}}<span class="units">str/s</span></span>
+		</div>
+		<div class="body-stat">
+			<span class="stat-label">Contact time</span>
+			<span class="num">{{decimalPlaces data_summary.strides.contact_median 3}}<span class="units">s</span></span>
+		</div>
+		<div class="body-stat">
+			<span class="stat-label">Ground acceleration</span>
+			<span class="num">{{decimalPlaces data_summary.max_z_accel 3}}<span class="units">m/s<super>2</super></span>
+		</div>	
+	</div>
+
+</a>
+</div>

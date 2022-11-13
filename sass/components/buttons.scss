@@ -1,0 +1,397 @@
+.btn {
+  height: $baseButtonHeight;
+  font-family: $sansFontFamily;
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: 600;
+  text-align: center;
+  vertical-align: top;
+  touch-action: manipulation;
+  color: $gray;
+  // background-color: $white;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid rgba(0,0,0,.07);
+  -webkit-font-smoothing: antialiased;
+  white-space: nowrap;
+  @include button-size(0, 18px, 15px, ($baseButtonHeight), $baseBorderRadius);
+  @include user-select(none);
+  @include transition(all .15s cubic-bezier(.64,.24,.36,.63));
+  outline: none !important;
+  &.full {
+    width: 100%;
+  }
+  &.select-los {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    display: inline-block;
+    border: solid 1px $grayLighter;
+    font-size: .9em;
+    @include border-radius(3px); 
+    &.light {
+      background-color: $grayLighter;
+      color: $gray;    
+      border-color: $grayLighter;
+    }
+    &.dark {
+      background-color: $gray;
+      color: $grayLighter;
+      border-color: darken($grayDark, 2%);    
+    }
+    background-color: $red;
+    color: $white;  
+    &.active {
+      background-color: $red;
+      color: $white;
+      border-color: darken($red, 5%);
+    }
+}  
+  
+  &.inline-soc {
+    background-color: transparent;
+    padding: 0 6px;
+    color: $grayLight;
+    .io {
+      margin: 0;
+    }
+  }
+  &.padded {
+    padding: 0 24px;
+  }
+  &.btn-logo {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    &.overlay {
+      color: $white;
+    }
+    .io {
+      margin-right: 0;
+    }
+  }
+  &.btn-fine-dotted {
+    border: dotted 1px $grayLight;
+    color: $grayLight;
+  }
+  &.stacked {
+    display: block;
+  }
+  &.round {
+    @include border-radius($baseBorderRadius);
+  }
+  &.right-icon {
+      .io {
+          margin: 0 0 0 6px;
+      }
+  } 
+  &.force-but {
+    margin: -4px 6px;
+    font-family: $sansFontFamily;
+    color: $white;
+  }
+
+  .io {
+    margin-right: 6px;
+    &.righty {
+      margin: 0 0 0 12px;
+    }
+  }
+
+  &.verylight {
+    border-color: $grayLightest;
+    color: $grayLightest;
+  }
+  &.lighter {
+    border-color: $grayLighter;
+    color: $grayLighter;
+  }
+  &.light {
+    border-color: $grayLight;
+    color: $grayLight;
+    background-color: rgba(255,255,255,.4);
+  }
+  &:active,
+  &.active {
+    outline: none;
+    &:focus,
+    &.focus {
+      @include tab-focus();
+    }
+  }
+
+  &:focus,
+  &.focus {
+    // color: $blue;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &.tiny {
+    padding: 1px 13px;
+    font-size: 14px;
+    i {
+      margin-right: 8px;
+    }
+  }
+  &.btn-appendage {
+    padding: 0 8px;
+  }
+  &.huge {
+    .io {
+      font-size: 36px;
+      font-weight: 900;
+    }
+  }
+  &.circle {
+      &.square {
+        @include border-radius($boxBorderRadius); 
+      }
+        @include border-radius(100%);
+        padding: 0;
+        min-width: $baseButtonHeight;
+        height: $baseButtonHeight;
+        line-height: $baseButtonHeight;
+        text-align: center;
+        vertical-align: top;
+        &.small {
+          min-width: $btnSmallHeight;
+          height: $btnSmallHeight;
+          line-height: $btnSmallHeight - 2px;
+        }
+        &.tiny {
+          min-width: 26px;
+          height: 26px;
+          line-height: 26px; 
+        }
+        .io {
+          margin: 0;
+          vertical-align: top;
+        }
+        &.loading {
+        i {
+            position: absolute;
+            @include opacity(0);
+            &.load-indicator {
+                position: relative;
+                @include opacity(100);
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+  }
+
+}
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-transparent {
+  @include button-var($gray, transparent, transparent, $blue, transparent, transparent); 
+    border-color: transparent;
+    i {
+        margin-right: 0;
+    }
+    &.icon-only {
+      .io {
+        font-size: 1.4em;
+      }
+    }
+    &.light {
+      @include button-var(lighten($grayLight, 24%), transparent, transparent, $blue, transparent, transparent); 
+    }
+    &.do-search {
+      color: $grayLighter;
+        vertical-align: middle;
+        padding: 0 6px;
+        line-height: 1em;
+    }
+    &.overlay {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    &.micro {
+      padding-left: 0;
+    }
+  }
+.btn-action {
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  padding: 0;
+  color: $gray;
+  .io {
+    font-size: 1.4em;
+    font-weight: 900;
+  }
+
+}
+.add-btn  {
+    @include button-variant($blue, transparent, $blue); 
+    &.in {
+      @include button-variant($white, $blue, darken($blue, 3%)); 
+    }
+}
+.btn-follow {
+    @include button-variant($blue, transparent, $blue); 
+    &.following {
+      @include button-variant($white, $blue, darken($blue, 3%)); 
+    }
+}
+.btn-featured {
+    @include button-variant($blue, transparent, $blue); 
+    &.featured {
+      @include button-variant($white, $blue, darken($blue, 3%)); 
+    }
+}
+.btn-published {
+  @include button-variant($blue, $white, $blue); 
+}
+.btn-blue {
+  @include button-variant($white, $blue, darken($blue, 3%)); 
+}
+.btn-blueDark {
+  @include button-variant($white, darken($blue, 5%), darken($blue, 7%)); 
+}
+.btn-naked {
+  line-height: 48px;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  &.bluish {
+    color: $blue;
+  }
+  &.grayish {
+    color: $grayLight;
+  }
+}
+.btn-avo {
+  @include button-variant($white, $avo4, darken($avo4, 2%)); 
+}
+.btn-blueTranslucent {
+  @include button-variant($white, $blueTranslucent, darken($blue, 3%));
+}
+.btn-create {
+  @include button-variant($grayLight, transparent, $grayLighter);
+}
+.btn-greenTranslucent {
+  @include button-variant($white, $greenTranslucent, darken($green, 3%));
+}
+.btn-subdued {
+  @include button-variant(darken($grayLight, 4%), $grayLighter, darken($grayLighter,3%));
+  // @include button-variant(darken($grayLight, 5%); darken($mushroom,3%); darken($grayLighter,3%));
+}
+.btn-dark {
+  @include button-variant($grayLighter, $grayDark, darken($grayDark, 2%));
+}
+.btn-overlayDark {
+  @include button-variant($grayLighter, lighten($grayDark, 8%), transparent);
+}
+.btn-gray {
+  @include button-variant($grayLight, $mushroom, $grayLight); 
+}
+.btn-red {
+  @include button-variant($white, $red, darken($red, 3%));
+}
+.btn-redTranslucent {
+  @include button-variant($white, $redTranslucent, darken($red, 3%));
+}
+.btn-redDark {
+  @include button-variant($white, darken($redTranslucent, 5%), darken($red, 7%));
+}
+.btn-green {
+  @include button-variant($white, $green, darken($green, 3%));
+}
+.btn-radio {
+  @include button-variant($grayLight, transparent, $grayLighter); 
+  &.checked {
+    @extend .btn-blue;
+  }
+}
+.radio-plain {
+    @inlude button-var($gray, transparent, transparent, $blue, transparent, transparent);
+    font-size: 20px;
+    @include border-radius(100%);
+    padding: 0;
+    &:before {
+        font-family: $ioIcon;
+        content: "\e964";          
+    }
+    &.checked {
+        &:before {
+            content: "\e96a";
+        }
+    }
+}  
+.btn-white {
+  @include button-variant($grayLight, $white, $white); 
+}
+.btn-whiteTranslucent {
+  @include button-variant($gray, $whiteTranslucent, $grayLight); 
+}
+.btn-o {
+  @include button-variant($white, transparent, $white);
+}
+.btn-greenline {
+  @include button-variant($green, transparent, $green); 
+}
+.btn-blueline {
+  @include button-variant($blue, transparent, $blue); 
+}
+.btn-redline {
+  @include button-variant($red, transparent, $red); 
+}
+.btn-grayLight {
+  @include button-variant($grayLight, transparent, $grayLight); 
+}
+.btn-fineline {
+  @include button-variant($grayLight, transparent, $grayLight); 
+}
+.btn-whiteline {
+  @include button-variant($white, transparent, rgba(255,255,255,.6));
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @indlude button-size(0 10px 14px 26px $boxBorderRadius);
+  height: $btnSmallHeight,
+}
+// .button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+.btn-large {
+  @include button-size(0, $btnLargeHeight, 1.05em, $btnLargeHeight, $boxBorderRadius);
+  height: $btnLargeHeight;
+  font-weight: 600;
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+
+// Search form button
+.search-user-btn {
+  position: absolute;
+  right: 0;
+  top: 19px;
+}
+

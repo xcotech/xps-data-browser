@@ -1,0 +1,226 @@
+$staticBase: '../../dist/';
+
+// overwrite this during deploy
+$assetBaseUrl: $staticBase;
+
+// Colors 
+$avo3: #f8f8f7;
+$avo4: #6cd1c0;
+$avo5: #44c3a1;
+
+$avo4Translucent: rgba(108, 209, 192,.9);
+$turkTranslucent: rgba(68,210,195,.96);
+$red: #d63020;
+$pink: #f866db;
+$pinkDark: #EF135C;
+
+$blue: #0ca3d4;
+// $blueTranslucent: rgba(26,139,186,.9);
+// $blue: #107EAF;
+$blueTranslucent: rgba(10,181,191,.9);
+
+$purple: #aa45d4;
+$orange: #e49210;
+$redTranslucent: rgba(214,48,32,.8);
+
+$greenTranslucent: rgba(76,178,95,.96);
+$whiteTranslucent: rgba(255,255,255,.94);
+$grayDarkTranslucent: rgba(49, 58, 63,.91);
+$grayLightestTranslucent: rgba(244,242,245,.9);
+$yellowTranslucent: rgba(255,196,12,.94);
+$mushroomTranslucent: rgba(248,248,244,.92);
+$blackOverlay: rgba(0,0,0,.7);
+$blackOverlayDense: rgba(0,0,0,.94);
+
+$black:                 #000;
+$grayDarker:            #2d3235;
+$grayDark:              #394145;
+$gray:                  #495b5b;
+$grayLight:             #919299;
+$grayLighter:           #f4f6f7;
+$mushroom:				#f4f6f7;
+$grayLightest:			#f2f7f6;
+$white:                 #fff;
+$blueDark:              #0064cd;
+$fadedBlue:				#7ebacd;
+$green:                 #00A82D;
+$greenLight:            #bfe1cd;
+$avocado:				#bee1cd;
+$yellow:                #ffc40d;
+$orange:                #f89406;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
+$twitter:				#55acee;
+$instagram:				$gray;
+$googleplus:			#dd4b39;
+$facebook:				#3B5998;
+$reddit:				#ff4500;
+$bodyBackground:        $white;
+$textColor:             $grayDark;
+
+
+// Base
+$backgroundColor: $white;
+$baseInk: $grayDark;
+
+// Links
+$linkColor:             $blue;
+$linkColorHover:        darken($linkColor, 10%);
+
+$baseFontSize: 16px;
+$baseLineHeight:        1.428571429; // 20/14
+$line-height-computed:    floor(($baseFontSize * $baseLineHeight)); // ~20px
+
+// Stem
+$stem:	600px;
+$fullSplit:	1024px;
+$stem_med:	560px;
+$stem_sm:	92%;
+$gutter_sm: 24px;
+$centerColumnWidth: $stem;
+
+// Misc
+$minorLineLength: 300px;
+
+// Border radius
+$baseBorderRadius:      3px;
+$borderRadiusLarge:     52px;
+$borderRadiusSmall:     32px;
+$boxBorderRadius:		2px;
+
+// Z-index master list
+$zindexDropdown:          1000;
+$zindexPopover:           1010;
+$zindexTooltip:           1030;
+$zindexFixedNavbar:       1031;
+$zindexModalBackdrop:     1040;
+$stageIndex:			  1030;
+$zindexModal:             1050;
+
+// Icon font
+$ioIcon: "ico";
+$nav-icon-size: 22px;
+
+@font-face {
+	font-family: 'ico';
+	src:url('#{$assetBaseUrl}fonts/xco-icons.woff2') format('woff2'),
+		url('#{$assetBaseUrl}fonts/xco-icons.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Typography
+$iconsFontPath:         "#{$assetBaseUrl}fonts";
+$fontPath:				"#{$assetBaseUrl}fonts";
+
+$sansFontFamily: 			"proxima-nova", "Helvetica Neue",Helvetica,Arial,sans-serif;
+$serifFontFamily: 			"proxima-nova", "Helvetica Neue",Helvetica,Arial,sans-serif;
+$logoFontFamily:			"brand-logo", $sansFontFamily;
+$headlineFontSize: 1.7em;
+
+@font-face {
+	font-family: 'proxima-nova';
+	src: url('#{$assetBaseUrl}fonts/pn-regular.woff2') format('woff2'),
+	url('#{$assetBaseUrl}fonts/pn-regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'proxima-nova';
+	src: url('#{$assetBaseUrl}fonts/pn-bold.woff2') format('woff2'),
+	url('#{$assetBaseUrl}fonts/pn-bold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'proxima-nova';
+	src: url('#{$assetBaseUrl}fonts/pn-extra-bold.woff2') format('woff2'),
+	url('#{$assetBaseUrl}fonts/pn-extra-bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'proxima-nova';
+	src: url('#{$assetBaseUrl}fonts/pn-light.woff') format('woff');
+	// url('#{$assetBaseUrl}fonts/pn-light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+.name-tag {
+	font-family: $sansFontFamily;
+	font-weight: 900;
+	text-transform: lowercase;
+	font-size: 1.05em;
+}
+
+// Posts
+$edToolbarHeight: 42px;
+$paragraphBottomMargin: 24px;
+$basePostLineHeight: 1.25em;
+$basePostLineHeight:   1.25em;
+$basePostFontSize:     1.1em;
+$basePostFontWeight:   400;
+
+// Forms
+$inputBackground:               $white;
+$inputBorder:                   #ccc;
+$inputBorderRadius:             $boxBorderRadius;
+$inputDisabledBackground:       $grayLighter;
+$formActionsBackground:         #f5f5f5;
+$inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+
+// Buttons
+$baseButtonHeight:                  40px;
+$medButtonHeight:                   46px;
+$btnLargeHeight:                    64px;
+$btnSmallHeight:                    32px;
+$buttonFontWeight:                  400;
+$btnCircleHeight:                   $baseButtonHeight;
+$btnBackground:                     $grayLightest;
+$btnBackgroundHighlight:            $grayLighter;
+$btnBorder:                         $grayLight;
+
+$btnPrimaryBackground:              $linkColor;
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 20%);
+
+$btnInfoBackground:                 #5bc0de;
+$btnInfoBackgroundHighlight:        #2f96b4;
+
+$btnSuccessBackground:              $green;
+$btnSuccessBackgroundHighlight:     lighten($green, 10%);
+
+$btnWarningBackground:              lighten($orange, 15%);
+$btnWarningBackgroundHighlight:     $orange;
+
+$btnDangerBackground:               $red;
+$btnDangerBackgroundHighlight:      lighten($red,10%);
+
+$btnInverseBackground:              #4c4c4c;
+$btnInverseBackgroundHighlight:     $grayDarker;
+
+// Nav
+$navBackground: $white;
+$navbarHeight: 62px;
+$navbarPadding: 12px;
+$subnavHeight: 36px;
+
+// Profiles
+$profileImageWidth: 120px;
+
+
+
+
+
+
+
+
+// Heroes
+$smallHeroDepth: 44vh;
+$partialHeroDepth: 65vh;
+$fullHeroDepth: 100vh;
+$heroBackground: transparent;
+$linkHeight: 60px;

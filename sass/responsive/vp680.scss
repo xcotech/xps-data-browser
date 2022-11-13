@@ -1,0 +1,10 @@
+@media(max-width: 680px) {
+    .center-column {
+        &.spill, &.wide { 
+            padding-left: $gutter_sm;
+            padding-right: $gutter_sm;
+        }
+        padding-left: $gutter_sm;
+        padding-right: $gutter_sm;
+    }
+}

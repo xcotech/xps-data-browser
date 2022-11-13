@@ -1,0 +1,56 @@
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle {
+    background-image: none;
+  }
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+@mixin button-var($color, $background, $border, $hoverColor, $hoverBackground, $hoverBorder) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle {
+    color: $hoverColor;
+    background-color: $hoverBackground;
+        border-color: $hoverBorder;
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle {
+    background-image: none;
+  }
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}

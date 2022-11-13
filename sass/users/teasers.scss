@@ -1,0 +1,50 @@
+.user-teaser {
+    @extend .clearfix;
+    position: relative;
+    padding: 8px 0;
+    border-bottom: solid 1px $grayLighter;
+    .user-text {
+        display: inline-block;
+        position: relative;
+        .user-name {
+            margin: 0;
+            font-weight: 600;
+        }
+    }
+    .teaser-img-container {
+        display: inline-block;
+        float: left;
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+    .user-teams {
+        display: inline-block;
+    }
+    .stats {
+        float: right;
+        display: inline-block;
+        vertical-align: middle;
+        .stat {
+            display: inline-block;  
+        }
+    }
+
+    &:nth-child(even) {background: $grayLighter}
+
+    // tr:nth-child(odd) {background: #FFF}
+}
+.team-losenge {
+    font-size: 0.85em;
+    padding: 2px 6px;
+    background: $gray;
+    color: $grayLighter;
+    display: inline-block;
+    margin: 0;
+    @include border-radius(3px)
+    &:last-child {
+        margin-right: 0;
+    }
+    &.coach {
+        background: $red;
+    }
+}

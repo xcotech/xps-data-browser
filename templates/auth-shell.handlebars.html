@@ -1,0 +1,21 @@
+<div class="page-container pageContainer" id="auth-{{authMode}}">   
+	{{#if authStatic}}
+		<header class="static-header">
+		    <div class="center-column"><h1>{{title}}</h1></div>
+		</header>
+		<div class="center-column">
+		    <div class="post-body static-body">
+		    	{{body}}
+		    </div>
+		</div>
+	{{else}}
+    <div class="hero full-page detailHero">
+        <div class="hero-image-wrapper heroImageWrapper">
+            <div class="hero-img" style="background-image: url('{{loginBackground}}');"></div>        
+            <div class="registration-wrapper" data-view-bind="AuthView">
+	            <div class="auth-container authContainer"></div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</div>

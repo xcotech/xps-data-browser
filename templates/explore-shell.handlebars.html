@@ -1,0 +1,16 @@
+<div class="page-container pageContainer" id="explore-{{viewType}}">
+
+    {{#if showCreateNew}}<button class="btn btn-blue circle float-right" data-actionbind data-action="createNew"><i class="ico ico-add"></i></button>{{/if}}
+    <div class="main-body explore-detail mainBody">
+
+        <div class="mainPaneContent">
+                <div class="center-column">
+                    <div class="pager-container pagerContainer exploreFeed">
+                        <div class="paginated-list paginatedList"></div>
+                    </div>                
+                </div>
+                <div class="center-column breadcrumb-links breadcrumbLinks">{{>pagination-links}}</div>
+        </div>
+    </div><!-- /.mainBody --> 
+    
+</div>

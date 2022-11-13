@@ -1,0 +1,15 @@
+image: node:10.15.1
+
+pipelines:
+  branches:
+    master:  
+      - step:
+          script:
+            # - npm install -g grunt-cli
+            # - npm install
+            - apt-get update && apt-get install -y python-dev
+            - curl -O https://bootstrap.pypa.io/get-pip.py
+            - python get-pip.py
+            - pip install awscli
+            - aws s3 sync --delete . s3://xco-apps/apps/xco.io/
+            - aws cloudfront create-invalidation --distribution-id ECC2GYHPKD2B9 --paths /apps/xco.io/index.html /apps/xco.io/dist/app.min.js /apps/xco.io/dist/css/main.css

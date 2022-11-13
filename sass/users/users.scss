@@ -1,0 +1,49 @@
+@import "teasers.scss";
+.profile-image {
+    width: $profileImageWidth;
+    padding-bottom: $profileImageWidth - 6px;
+    height: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: $gray;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    position: relative;
+    border: solid 3px rgba(0,0,0,0.1);
+    outline: none;
+    box-shadow: none;
+    @extend .coreAnimate;
+    @include border-radius(100%);
+    &.inline {
+        position: absolute;
+        display: inline-block;
+    }
+    &.large {
+        width: 140px;
+        padding-bottom: 140px;
+    }
+    &.small {
+        width: 32px;
+        padding-bottom: 32px;
+        border: none;
+    }
+    &.medium-small {
+        $mediumSmallDiameter: 46px;
+        width: $mediumSmallDiameter;
+        padding-bottom: $mediumSmallDiameter;
+        border: none;
+    }
+    &.medium {
+        width: 94px;
+        // padding-bottom: 94px;
+        padding-bottom: 88px;
+        // border: none;
+    }
+    &.tiny {
+        width: $baseButtonHeight;
+        padding-bottom: $baseButtonHeight;
+    }
+}

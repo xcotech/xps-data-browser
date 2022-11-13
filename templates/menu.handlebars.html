@@ -1,0 +1,103 @@
+  <div class="inner-menu innerMenu">
+    <div class="grid-base">
+        <div class="menu-main">
+
+            <div class="split-col">
+
+                <div class="col top lefty c70">
+
+                    <div class="menu-item-product">
+                        <div class="product-main">
+                            <h2 class="brand-text tm"><a href="/xps" class="wrapping-anchor" data-navigate>XPS BioAnalytics</a></h2>
+                            <div class="subhead">Advancing health and human performance with comprehensive biometric, biomechanical and cognitive assessment.</div>
+                        </div>
+
+
+                        <div class="menu-sub-item">
+                            <div class="sub-product">
+                                <a href="/sport" data-navigate><h3>Sport</h3></a>
+                            </div>
+<!--                            <div class="sub-product">
+                                <a href="/concussion" data-navigate><h3>Concussion</h3></a>
+                            </div>                -->           
+                            <div class="sub-product">
+                                <a href="/health" data-navigate><h3>Healthcare</h3></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col c30 top righty">
+
+                    <ul class="menu-actions menuActions">
+                        <li><a class="wrapping-anchor" href="/about" data-navigate>About</a></li>
+                        <li><a class="wrapping-anchor" href="/blog" data-navigate>News</a></li>
+                        <li><a class="wrapping-anchor" href="/casestudies" data-navigate>Case studies</a></li>
+                        <li><a class="wrapping-anchor" href="/contact" data-navigate>Contact</a></li>
+                        <li><a class="wrapping-anchor" href="/careers" data-navigate>Careers</a></li>
+                        <li><a class="wrapping-anchor" href="/terms" data-navigate>Legal</a></li>
+                    </ul>
+
+
+                    <div class="user-block userBlock">
+                        {{#if user}}
+                        <div class="menu-subhead">Logged in as</div>
+                        <div class="user-name">{{user.full_name}}</div>
+                        <div class="org-block orgBlock">
+                            <div class="org-name">{{user.org.name}}</div>
+                        </div>
+
+                        <div class="actions">
+                            <button class="btn btn-fineline" data-actionbind data-action="logout">Logout</button>
+                        </div>
+                        {{/if}}
+                    </div>    
+
+                </div>          
+            </div>
+        </div>
+
+        <div class="menu-footer">
+
+            <div class="split-col">
+
+                <div class="col top lefty c60">
+
+                    <div class="ident">
+                    
+<!--                        <div class="cell logo">
+                            <a href="/" rel="home" class="wrapping-anchor nav-but navHomey" data-navigate>
+                                <i class="io io-xco"></i>
+                            </a>
+                        </div> -->
+                        <div class="cell details">
+                            <div class="company-name">XCO Tech Inc</div>
+            
+                            <div class="plain">
+                                Centre of Excellence<br />
+                                583 Duncan Avenue West<br />
+                                Penticton, BC V2A 8E1<br />
+                                Canada
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col top righty c40">
+                    <div class="menu-subscribe-container">
+                        <div class="btn-container centered">
+                            <a class="btn btn-large btn-dark" href="/updates" data-navigate>Get the newsletter</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>  
+
+    </div>
+
+</div>
+

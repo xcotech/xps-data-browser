@@ -1,0 +1,124 @@
+@media(max-width: 768px) {
+    h1 {
+        font-size: 1.6em;
+        &.big {
+            font-size: 1.6em;
+        }
+    }    
+    .navbar {
+        .nav-el {
+            .nav-but {
+                .io {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .post-teaser {
+        .pt-title {
+            font-weight: 600;
+            font-size: 1.4em;
+            line-height: 1em;
+        }
+    }
+    .post-subtitle {
+        font-size: 1.2em;
+        line-height: 1.1em;
+    }    
+    .top-actions {
+        display: block;
+    }
+    .auth-top {
+        font-size: 1em;
+        line-height: 1.05em;
+    }
+    .word-count {
+        display: none;
+    }
+    .edit-nav {
+        .desktop {
+            display: none;
+        }
+    }
+    .show-left-drawer {
+        .topright {
+            display: none;
+        }
+    }
+    .show-right-drawer {
+        .topleft {
+            display: none;
+        }
+    }
+    .modal-card {
+        width: auto;
+        height: auto;
+        margin: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    .search-container {
+        margin: 80px 0;
+    }
+    .left-drawer-open {
+        .shell {
+            left: 160px;
+        }
+    }
+    .navbar-fixed-top {
+        .homey {
+            .texty {
+            }
+        }
+    }
+    .static-nav {
+        margin-bottom: 50px;
+    }
+    .alert-container {
+        width: 70%;
+        margin-left: -35%;
+    }
+    .left-column {
+        margin-bottom: 15px;
+    }
+    .page-container {
+        padding: 0 0 0 0;
+    }
+    .card-header {
+        font-size: 2.3em;
+    }
+    .with-hero .main.container {
+        position: relative;
+    }
+    .hero-navbar {
+        margin-bottom: 30px;
+    }
+    .nav-item.pull-right {
+        float: none;
+        position: absolute;
+        right: 0;
+    }  
+    .hero-content-wrapper {
+        padding: 0 15px 0 15px;        
+    }
+    .navbar .container {
+        width: auto;
+    }
+    .page-container {
+        position: relative;
+        background: $backgroundColor;
+    }
+    .hero {
+        .hero-blurb {
+            font-size: 1em;
+        }
+          .hero-image-wrapper {
+                  video {                
+                &.full-height {
+                }
+            }
+        }
+    }
+}

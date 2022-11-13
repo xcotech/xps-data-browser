@@ -1,0 +1,16 @@
+<div class="strides-table ">
+	<div class="header-row">
+		<div class="col left w25">Side <span class="units"></span></div>
+		<div class="col w25">Length <span class="units"></span>m</div>
+		<div class="col w25">Contact time <span class="units">s</span></div>
+		<div class="col last">Frequency <span class="units">strides/s</span></div>
+	</div>	
+{{#each strides}}
+	<div class="table-row sprint-stride stride">
+		<div class="metric left w25">{{side}}</div>
+		<div class="metric w25">{{decimalPlaces length 2}}</div>
+		<div class="metric w25">{{decimalPlaces contact_time 2}}</div>
+		<div class="metric last">{{decimalPlaces frequency 2}}</div>
+	</div>
+{{/each}}
+</div>

@@ -1,0 +1,54 @@
+.fade {
+  opacity: 0;
+  @include transition(opacity .15s linear);
+  &.in {
+    opacity: 1;
+  }
+}
+
+.pageFadeIn {
+    @include transition(transform cubic-bezier(0.19, 1, 0.22, 1));
+    @include transition-delay(400ms);
+    @include transition-duration(600ms);
+}
+
+.navAnimate {
+    -webkit-transform: translateZ(0);
+    // .transition(transform cubic-bezier(0.19, 1, 0.22, 1));
+    @include transition(all linear);
+    @include transition-delay(0);
+    @include transition-duration(200ms);
+}
+
+.coreAnimate {
+    @include transition(transform cubic-bezier(0.19, 1, 0.22, 1));
+    @include transition-delay(0);
+    @include transition-duration(220ms);
+}
+
+.hoverAnimate {
+    @include transition(all cubic-bezier(0.19, 1, 0.22, 1));
+    @include transition-delay(0);
+    @include transition-duration(400ms);
+}
+
+.heroSliderAnimate {
+    @include transition(all cubic-bezier(0.19, 1, 0.22, 1));
+    @include transition-duration(300ms);
+    @include transition-delay(0);
+}
+
+.linearAnimate {
+    @include transition(transform ease-in-out(0.2s));
+    @include transition-delay(0);
+    @include transition-duration(500ms);
+}
+
+.collapse {
+  display: none;
+  visibility: hidden;
+
+  &.in      { display: block; visibility: visible; }
+  tr { &.in    { display: table-row; } }
+  tbody {&.in { display: table-row-group; } }
+}

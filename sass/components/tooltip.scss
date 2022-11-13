@@ -1,0 +1,60 @@
+$opacityTooltip: 1;
+$toolTipArrowWidth: 12px;
+.tooltip {
+  position: absolute;
+  z-index: $zindexTooltip;
+  display: block;
+  visibility: visible;
+  // Reset font and text properties given new insertion method
+  font-family: $sansFontFamily;
+  font-weight: normal;
+  line-height: 1em;
+  @include opacity(0);
+
+  &.in     { @include opacity($opacityTooltip); }
+  &.top    { margin-top:  -3px; padding: $toolTipArrowWidth 0; }
+  &.right  { margin-left:  3px; padding: 0 $toolTipArrowWidth; }
+  &.bottom { margin-top:   3px; padding: $toolTipArrowWidth 0; }
+  &.left   { margin-left: -3px; padding: 0 $toolTipArrowWidth; }
+
+  &.bottom {
+    .tooltip-inner {
+      &:after {
+        bottom: initial;
+        top: 8px;
+      }
+    }
+  }
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+    // max-width: 300px;
+    width: auto;
+    min-width: 90px;
+    padding: 8px 10px;
+    font-size: .85em;
+    line-height: 1em;
+    color: $grayLightest;
+    text-align: center;
+    text-decoration: none;
+    background-color: $grayDark;
+    border-radius: $boxBorderRadius;
+    &:after {
+      border: none;
+      @include border-radius(0 2px);
+      // border: solid 1px $grayLighter;
+      // .box-shadow(-1px 3px 8px rgba(0, 0, 1, 0.125));
+      width: 12px;
+      height: 12px;
+      background-color: $grayDark;
+      position: absolute;
+      display: block;
+      content: '';
+      transform: rotate(-45deg);
+      left: 50%;
+      margin-left: -7px;
+      bottom: 8px;
+      z-index: -1;
+  }   
+}

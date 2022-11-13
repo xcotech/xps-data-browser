@@ -1,0 +1,673 @@
+.ico {
+  display: inline-block;
+  font-family: $ioIcon;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  font-size: 16px;
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.ico-align-left, &.ico-align-center, &.ico-align-right {
+    font-size: 13px;
+  }
+  &.verylight {
+    color: $grayLightest;
+  }
+  &.lighter {
+    color: $grayLighter;
+  }
+  &.solid {
+    color: $gray;
+  }
+  &.bold {
+    font-weight: 900;
+  }
+}
+
+$navbarIconSize: 21px;
+
+// Rotated & Flipped Icons
+// -------------------------
+
+@mixin ico-rotate-45() {
+  @include ico-rotate(45deg, 1)  
+}
+@mixin ico-rotate-m45() {
+  @include ico-rotate(-45deg, 1)  
+}
+@mixin ico-rotate-90() {
+  @include ico-rotate(90deg, 1)  
+}
+@mixin ico-rotate-180() {
+  @include ico-rotate(180deg, 1)  
+}
+@mixin ico-rotate-240() {
+  @include ico-rotate(240deg, 1)  
+}
+@mixin ico-rotate-270() {
+  @include ico-rotate(270deg, 1)  
+}
+
+// Hook for IE8-9
+// -------------------------
+
+:root .ico-rotate-45,
+:root .ico-rotate-90,
+:root .ico-rotate-180,
+:root .ico-rotate-270 {
+  filter: none;
+}
+
+
+@mixin ico-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+.half-spin {
+  transform-origin: 50% 50%;
+  -o-transform-origin:50% 50%;
+  -ms-transform-origin:50% 50%;
+  -moz-transform-origin:50% 50%;
+  -webkit-transform-origin:50% 50%;
+  -webkit-animation: spin .15s ease-in;
+  -moz-animation: spin .15s ease-in;
+  -ms-animation: spin .15s ease-in;
+  -o-animation: spin .15s ease-in;
+  animation: spin .15s ease-in; 
+}
+
+.twirl {
+  @include opacity(.25);
+  .p2 {
+    -webkit-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -moz-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -ms-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -o-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+      transform-origin: -27px;
+  -o-transform-origin: -27px;
+  -ms-transform-origin: -27px;
+  -moz-transform-origin: -27px;
+  -webkit-transform-origin: -27px;
+  }
+    .p3 {
+    -webkit-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -moz-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -ms-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -o-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+      transform-origin: -5px;
+  -o-transform-origin: -5px;
+  -ms-transform-origin: -5px;
+  -moz-transform-origin: -5px;
+  -webkit-transform-origin: -5px;
+  }
+      transform-origin: 50% 50%;
+  -o-transform-origin:50% 50%;
+  -ms-transform-origin:50% 50%;
+  -moz-transform-origin:50% 50%;
+  -webkit-transform-origin:50% 50%;
+    -webkit-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -moz-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -ms-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    -o-animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1);
+    animation: spin 1.3s infinite cubic-bezier(0.89, 1, 0.82, 1); 
+}
+
+.loader-spin {
+      transform-origin: 50% 50%;
+  -o-transform-origin:50% 50%;
+  -ms-transform-origin:50% 50%;
+  -moz-transform-origin:50% 50%;
+  -webkit-transform-origin:50% 50%;
+    -webkit-animation: spin .7s infinite ease-in-out;
+    -moz-animation: spin .7s infinite ease-in-out;
+    -ms-animation: spin .7s infinite ease-in-out;
+    -o-animation: spin .7s infinite ease-in-out;
+    animation: spin .7s infinite ease-in-out; 
+}
+$spinSpee: .58s;
+.ico-spin-rev {
+    transform-origin: 50% 50%;
+    -o-transform-origin:50% 50%;
+    -ms-transform-origin:50% 50%;
+    -moz-transform-origin:50% 50%;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation: spin .58s infinite linear reverse;
+    -moz-animation: spin .58s infinite linear reverse;
+    -ms-animation: spin .58s infinite linear reverse;
+    -o-animation: spin .58s infinite linear reverse;
+    animation: spin .58s infinite linear reverse;
+    &.slow {
+        -webkit-animation: spin .78s infinite linear reverse;
+        -moz-animation: spin .78s infinite linear reverse;
+        -ms-animation: spin .78s infinite linear reverse;
+        -o-animation: spin .78s infinite linear reverse;
+        animation: spin .78s infinite linear reverse;
+    }    
+ }
+
+.ico-spin {
+    -webkit-filter: blur(0); 
+      transform-origin: 50% 50%;
+  -o-transform-origin:50% 50%;
+  -ms-transform-origin:50% 50%;
+  -moz-transform-origin:50% 50%;
+  -webkit-transform-origin:50% 50%;
+    -webkit-animation: spin 1.1s infinite linear;
+    -moz-animation: spin 1.1s infinite linear;
+    -ms-animation: spin 1.1s infinite linear;
+    -o-animation: spin 1.1s infinite linear;
+    animation: spin 1.1s infinite linear;
+    &.large {
+      font-size: 34px;
+    }
+ }
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+.swap-close {
+    .ico {
+        @extend .hoverAnimate;
+    }
+    &:hover {
+        .ico {
+            @include ico-rotate-90();
+        }
+    }
+    &.open {
+        .ico {
+            @include ico-rotate-180();
+            &:before {
+                content: "\e923";
+            }
+        }          
+    }
+}
+
+.ico-ruler:before {
+  content: "\e98b";
+}
+.ico-ice-skate:before {
+  content: "\e98a";
+}
+.ico-square:before {
+  content: "\e989";
+}
+.ico-circle:before {
+  content: "\e987";
+}
+.ico-linkedin:before {
+  content: "\f0e1";
+}
+.ico-instagram:before {
+  content: "\f16d";
+}
+.ico-asterisk:before {
+  content: "\e926";
+}
+.ico-crop_square:before {
+  content: "\e988";
+}
+.ico-directions_run:before {
+  content: "\e909";
+}
+.ico-skip_next:before {
+  content: "\e982";
+}
+.ico-pause:before {
+  content: "\e985";
+}
+.ico-play_arrow:before {
+  content: "\e986";
+}
+.ico-umbrella:before {
+  content: "\eb3e";
+}
+.ico-chat:before {
+  content: "\e8af";
+}
+.ico-help:before {
+  content: "\e887";
+}
+.ico-info:before {
+  content: "\e88e";
+}
+.ico-big_t:before {
+  content: "\e264";
+}
+.ico-xco:before {
+  content: "\e908";
+}
+.ico-schedule:before {
+  content: "\e902";
+}
+.ico-accessibility:before {
+  content: "\e903";
+}
+.ico-accessible:before {
+  content: "\e904";
+}
+.ico-bank:before {
+  content: "\e905";
+}
+.ico-user_circle:before {
+  content: "\e906";
+}
+.ico-add:before {
+  content: "\e907";
+}
+.ico-add_circle:before {
+  content: "\e90a";
+}
+.ico-apps:before {
+  content: "\e90b";
+}
+.ico-arrow_back:before {
+  content: "\e90c";
+}
+.ico-arrow_down:before {
+  content: "\e90d";
+}
+.ico-arrow_forward:before {
+  content: "\e90e";
+}
+.ico-arrow_up:before {
+  content: "\e910";
+}
+.ico-clipboard:before {
+  content: "\e911";
+}
+.ico-flag:before {
+  content: "\e912";
+}
+.ico-paperclip:before {
+  content: "\e914";
+}
+.ico-dollar:before {
+  content: "\e915";
+}
+.ico-paperclip_h:before {
+  content: "\e916";
+}
+.ico-refresh:before {
+  content: "\e917";
+}
+.ico-cloud_upload:before {
+  content: "\e918";
+}
+.ico-parasol:before {
+  content: "\e919";
+}
+.ico-bookmark:before {
+  content: "\e91b";
+}
+.ico-brightness:before {
+  content: "\e91c";
+}
+.ico-bug:before {
+  content: "\e91d";
+}
+.ico-wrench:before {
+  content: "\e91e";
+}
+.ico-arrow_outgoing:before {
+  content: "\e91f";
+}
+.ico-arrow_incoming:before {
+  content: "\e920";
+}
+.ico-camera:before {
+  content: "\e921";
+}
+.ico-delta:before {
+  content: "\e922";
+}
+.ico-close:before {
+  content: "\e923";
+}
+.ico-cloud_download:before {
+  content: "\e924";
+}
+.ico-code:before {
+  content: "\e925";
+}
+.ico-collections:before {
+  content: "\e927";
+}
+.ico-palette:before {
+  content: "\e928";
+}
+.ico-edit:before {
+  content: "\e929";
+}
+.ico-crop:before {
+  content: "\e92a";
+}
+.ico-expand:before {
+  content: "\e92b";
+}
+.ico-menu:before {
+  content: "\e92c";
+}
+.ico-delete:before {
+  content: "\e92d";
+}
+.ico-document:before {
+  content: "\e92e";
+}
+.ico-bike:before {
+  content: "\e92f";
+}
+.ico-no:before {
+  content: "\e930";
+}
+.ico-check:before {
+  content: "\e931";
+}
+.ico-chart_column:before {
+  content: "\e932";
+}
+.ico-euro:before {
+  content: "\e933";
+}
+.ico-compass:before {
+  content: "\e934";
+}
+.ico-puzzle:before {
+  content: "\e935";
+}
+.ico-face:before {
+  content: "\e936";
+}
+.ico-heart:before {
+  content: "\e937";
+}
+.ico-circle_filled:before {
+  content: "\e938";
+}
+.ico-download:before {
+  content: "\e939";
+}
+.ico-upload:before {
+  content: "\e93a";
+}
+.ico-flare:before {
+  content: "\e93b";
+}
+.ico-bolt_big:before {
+  content: "\e93c";
+}
+.ico-align_c:before {
+  content: "\e93d";
+}
+.ico-align_j:before {
+  content: "\e93e";
+}
+.ico-align_l:before {
+  content: "\e93f";
+}
+.ico-align_r:before {
+  content: "\e940";
+}
+.ico-bold:before {
+  content: "\e941";
+}
+.ico-clear_format:before {
+  content: "\e942";
+}
+.ico-color_text:before {
+  content: "\e943";
+}
+.ico-unindent:before {
+  content: "\e944";
+}
+.ico-indent:before {
+  content: "\e945";
+}
+.ico-italic:before {
+  content: "\e946";
+}
+.ico-ul:before {
+  content: "\e947";
+}
+.ico-ol:before {
+  content: "\e948";
+}
+.ico-quote:before {
+  content: "\e949";
+}
+.ico-format_strikethrough:before {
+  content: "\e983";
+}
+.ico-underline:before {
+  content: "\e94a";
+}
+.ico-forward:before {
+  content: "\e94b";
+}
+.ico-gavel:before {
+  content: "\e94c";
+}
+.ico-scribble:before {
+  content: "\e94d";
+}
+.ico-star:before {
+  content: "\e94e";
+}
+.ico-kitt:before {
+  content: "\e94f";
+}
+.ico-group:before {
+  content: "\e950";
+}
+.ico-group_add:before {
+  content: "\e951";
+}
+.ico-home:before {
+  content: "\e952";
+}
+.ico-lock:before {
+  content: "\e953";
+}
+.ico-link:before {
+  content: "\e954";
+}
+.ico-chev_down:before {
+  content: "\e955";
+}
+.ico-chev_left:before {
+  content: "\e956";
+}
+.ico-chev_right:before {
+  content: "\e957";
+}
+.ico-chev_up:before {
+  content: "\e958";
+}
+.ico-tag:before {
+  content: "\e959";
+}
+.ico-layers:before {
+  content: "\e95a";
+}
+.ico-flower:before {
+  content: "\e95b";
+}
+.ico-read:before {
+  content: "\e95c";
+}
+.ico-print:before {
+  content: "\e95d";
+}
+.ico-map_marker:before {
+  content: "\e95e";
+}
+.ico-comment:before {
+  content: "\e95f";
+}
+.ico-more_h:before {
+  content: "\e960";
+}
+.ico-more_v:before {
+  content: "\e961";
+}
+.ico-motorcycle:before {
+  content: "\e962";
+}
+.ico-notifications:before {
+  content: "\e963";
+}
+.ico-radio_unchecked:before {
+  content: "\e964";
+}
+.ico-person:before {
+  content: "\e965";
+}
+.ico-person_add:before {
+  content: "\e966";
+}
+.ico-photo:before {
+  content: "\e967";
+}
+.ico-power_cord:before {
+  content: "\e968";
+}
+.ico-power_symbol:before {
+  content: "\e969";
+}
+.ico-radio_checked:before {
+  content: "\e96a";
+}
+.ico-redo:before {
+  content: "\e96b";
+}
+.ico-remove:before {
+  content: "\e96c";
+}
+.ico-eye:before {
+  content: "\e96d";
+}
+.ico-replay:before {
+  content: "\e96e";
+}
+.ico-reply:before {
+  content: "\e96f";
+}
+.ico-reply_all:before {
+  content: "\e970";
+}
+.ico-rss:before {
+  content: "\e971";
+}
+.ico-search:before {
+  content: "\e972";
+}
+.ico-paper_plane:before {
+  content: "\e973";
+}
+.ico-sad:before {
+  content: "\e974";
+}
+.ico-neutral:before {
+  content: "\e975";
+}
+.ico-happy:before {
+  content: "\e976";
+}
+.ico-cig:before {
+  content: "\e977";
+}
+.ico-share:before {
+  content: "\e978";
+}
+.ico-chart_line:before {
+  content: "\e979";
+}
+.ico-spa:before {
+  content: "\e97a";
+}
+.ico-strikethrough_s:before {
+  content: "\e984";
+}
+.ico-swatches:before {
+  content: "\e97b";
+}
+.ico-thumb_down:before {
+  content: "\e97c";
+}
+.ico-thumb_up:before {
+  content: "\e97d";
+}
+.ico-undo:before {
+  content: "\e97e";
+}
+.ico-clock:before {
+  content: "\e97f";
+}
+.ico-flame:before {
+  content: "\e980";
+}
+.ico-zoom_out:before {
+  content: "\e981";
+}
+.ico-google-plus:before {
+  content: "\e900";
+}
+.ico-google:before {
+  content: "\e901";
+}
+.ico-twitter:before {
+  content: "\e90f";
+}
+.ico-external-link:before {
+  content: "\e913";
+}
+.ico-quotes-left:before {
+  content: "\e91a";
+}
+.ico-facebook:before {
+  content: "\f231";
+}
+.ico-github:before {
+  content: "\f233";
+}
+.ico-reddit:before {
+  content: "\f23b";
+}
+.ico-pinterest:before {
+  content: "\f2b1";
+}
+.ico-markdown:before {
+  content: "\f4e6";
+}
+.ico-whatsapp:before {
+  content: "\f4f0";
+}
+.ico-branch:before {
+  content: "\f023";
+}
+.ico-inbox:before {
+  content: "\f0cf";
+}
+.ico-pulse:before {
+  content: "\f085";
+}

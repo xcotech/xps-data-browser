@@ -1,0 +1,16 @@
+<div class="splits-table striped-stats-table">
+	<div class="header-row">
+		<div class="col left w25">Distance <span class="units"></span>m</div>
+		<div class="col w25">Duration <span class="units"></span>s</div>
+		<div class="col w25">Cumulative time <span class="units">s</span></div>
+		<div class="col last">Avg velocity <span class="units">m/s</span></div>
+	</div>
+{{#each splits}}
+	<div class="table-row sprint-split split">
+		<div class="metric left w25">{{cumulative_distance}}</div>
+		<div class="metric w25">{{decimalPlaces duration 3}}</div>
+		<div class="metric w25">{{decimalPlaces cumulative_time 3}}</div>
+		<div class="metric last">{{decimalPlaces velocity 3}}</div>
+	</div>
+{{/each}}
+</div>

@@ -1,0 +1,22 @@
+<div class="left-subnav pull-left">
+	<div class="subnav-item session-meta">
+		<div class="session-name sessionCrumb" data-id={{id}}>{{name}}</div>
+		<div class="session-description">{{description}}</div>
+	</div>
+	{{#if type_definition}}
+	<div class="subnav-item act-detail">
+		<div class="act-type-los type">{{type_definition.activity_type}}</div>
+		{{#compare type_definition.activity_type 'jump'}}
+			<div class="act-type-los orientation">{{type_definition.orientation}}</div>
+		{{else}}
+			<div class="act-type-los distance">{{type_definition.distance}}m</div>
+			<div class="act-type-los start">{{type_definition.start_type}} start</div>
+		{{/compare}}
+	</div>
+	{{/if}}
+</div>
+<div class="right-subnav pull-right">
+	<div class="actions">
+		<button class="btn btn-transparent"><i class="ico ico-cloud_download"></i></button>
+	</div>
+</div>

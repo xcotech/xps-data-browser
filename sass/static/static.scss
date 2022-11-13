@@ -1,0 +1,658 @@
+$cardContentHeight: 300px;
+.full-card-header {
+    position: absolute;
+    width: 100%;
+    margin: -$cardContentHeight/2 auto 0;
+    height: $cardContentHeight;
+    top: 50%;
+    .card-title {
+        color: $white;
+        font-size: 2.1em;
+        margin: 0;
+        &.inline {
+            display: inline-block;
+        }
+    }
+    .card-inner-content {
+        margin: 24px 0 0;
+        h1 {
+            color: $grayDarker;
+        }
+        p {
+            color: $grayDark;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            line-height: 1.1em;            
+        }
+        &.overlay {
+            @include opacity(.95);
+            h1 {
+                color: $white;
+            }
+            p {
+                color: $grayLighter;
+                font-family: $sansFontFamily;
+            }
+            a {
+                color: $white;
+                font-weight: 600;
+            }
+        }        
+    }
+    .card-nav {}
+}
+.card-footer {
+    padding: 0;        
+    height: 36px;
+    line-height: 36px;
+    margin-top: 0;
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    .footer-links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        // height: $drawerFooterHeight;
+        // line-height: $drawerFooterHeight;  
+        // border-top: solid 1px $grayLighter;
+        li {
+            @extend .hoverAnimate;
+            line-height: 32px;
+            display: inline;
+            color: darken($grayLighter, 6%);
+            padding: 0 12px;
+            font-weight: 400;
+            .io {
+                color: darken($grayLighter, 6%);
+                font-size: 16px;
+            }
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+            &.facebook, &.twitter {
+                width: 34px;
+                text-align: center;
+            }
+        }
+    }    
+    &.overlay {
+        .btn {
+            color: $white;
+        }
+    }
+    .btn {
+        @include opacity(.6);
+        &.btn-logo {
+            .io {
+                font-size: 1.67em;
+            }
+        }
+    }
+    .lefty {
+        float: left;
+    }
+    .righty {
+        float: right;
+    }
+}
+.card-blurb-overlay {
+    display: none;
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.8);
+    z-index: 20;
+    .scrollable-container {
+        position: absolute;
+        overflow-y: scroll;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;        
+    }
+    .blurb-content {
+        margin: 64px auto;
+        color: $white;
+        @extend .readingText;
+    }
+}
+.about-section {
+    padding: 64px 0;
+    &.header {
+        background-color: $mushroom;
+        padding: 140px 0 64px;
+        height: 100vh;
+
+    }
+}
+.large-title {
+    font-size: 3em;
+    color: $white;
+    @include opacity(.9);
+}
+
+.mini-features {
+    display: table;
+    width: 100%;
+    .feature-block {
+        position: relative;
+        margin: 0 auto;
+        padding: 0 32px 32px;
+        display: table-cell;
+        height: 500px;
+        width: 50%;
+        .feature-img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            // bottom: 0;
+            height: 100%;
+            @extend .cover-background;
+            @include darken(.68, $black);
+            &.lazyload, &.lazyloading {
+                @include opacity(0);
+            }
+            &.lazyloaded {
+                @include opacity(1);
+                @include transition(opacity .25s ease-in);
+            } 
+        }
+        .content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 40%;
+            bottom: 0;
+            color: $white;
+            padding: 0 28%;
+            .feature-head {
+                font-size: 1.6em;
+                font-weight: 600;
+                margin-bottom: 4px;
+                color: $white;
+                .subdued {
+                   @include opacity(.3); 
+                }
+            }
+            .feature-sub {
+                font-size: 1.2em;
+                font-weight: 300;
+
+            }
+        }
+        .icon {
+            display: block;
+            width: 48px;
+            margin: 0 auto 8px;
+            @include border-radius($baseBorderRadius);
+            border: solid 1px $grayLighter;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+        }
+        .texty {
+            display: block;
+            text-align: center;
+        }   
+        &.righty {
+            .icon {
+                float: right;
+            }
+        }
+    }
+}
+.in-body-full-textarea {
+    textarea {
+        width: 100%;
+        border: solid 1px $grayLighter;
+        font-family: $sansFontFamily;
+        font-size: 1.25em;
+        line-height: 1.2em;
+        padding: 20px;
+        background-color: $white;
+    }
+}
+.wee-inline-link {
+    color: $gray;
+    font-weight: 600;
+    &.cap {
+        text-transform: capitalize;
+    }
+    &:hover {
+        color: $grayDark;
+    }
+}
+
+.about-links {
+    list-style: none;
+    display: inline;
+    li {
+        display: inline;
+        margin-left: 4px;
+    }
+}
+.nar-o-links {
+    width: 200px;
+    text-align: center;
+    margin: 24px auto 0;
+    &.overlay {
+        li {
+            color: $whiteTranslucent;
+            border-bottom: solid 1px rgba(255,255,255,.1);
+        }
+    }
+    li {
+        color: $grayLight;
+        line-height: 34px;
+        padding: 0;
+        margin: 0 auto;
+        text-align: left;
+        display: block;
+        border-bottom: solid 1px $grayLighter;
+        &:last-child {
+            border-bottom: none;
+        }
+        .io {
+            width: 36px;
+            text-align: center;
+            margin-right: 6px;
+        }
+    }
+}
+.main-panel {
+    margin: 48px 0 0;
+}
+.page-card {
+    background-color: $white;
+    // height: 100vh;
+    position: relative;
+    .card-image-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        // bottom: 0;
+        height: 100%;
+        @extend .cover-background;
+        @include darken(.68, $black);
+        &.lazyload, &.lazyloading {
+            @include opacity(0);
+        }
+        &.lazyloaded {
+            @include opacity(1);
+            @include transition(opacity .25s ease-in);
+        }                    
+    }
+    &.image {
+        background-color: $grayDarker;
+        .feature-head {
+            h1 {
+                color: $white;
+            }
+            .card-subhead {
+                color: $grayLighter;
+            }
+        }
+    }
+    .card-subhead {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .sub-options {
+        margin: 24px auto 0;
+        .options-subhead {
+            width: 360px;
+            display: block;
+            color: rgba(255,255,255,.6);
+            position: relative;
+            margin: 0 auto 24px;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 8px;
+                width: 100px;
+                height: 1px;
+                background-color: rgba(255,255,255,.3);
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 8px;
+                width: 100px;
+                height: 1px;
+                background-color: rgba(255,255,255,.3);
+            }            
+        }
+    }
+    .hero-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 648px;
+        width: 600px;
+        margin-left: -300px;
+        margin-top: -324px;
+    }
+    .feature-head {
+        position: absolute;
+        top: 50%;
+        height: 280px;
+        margin: -140px auto;
+        width: 100%;
+    }
+    .more-next {
+        width: 64px;
+        position: absolute;
+        bottom: 48px;
+        left: 50%;
+        margin-left: -23px;
+        top: initial;
+        @include opacity(.7);
+        &:before {
+            position: absolute;
+            // content: "Faire défiler";
+            margin-top: -12px;
+        }
+        &.overlay {
+            color: $white;
+            &:before {
+                color: $white;
+            }
+        }
+        .io {
+            font-size: 36px;
+        }
+    }
+    &.image {
+        background-size: cover;
+    }
+    &.white {
+        background-color: $white;
+    }
+    &.lemon {
+        background-color: $yellow;
+    }
+    &.avocado {
+        background-color: $avocado;
+    }
+    &.blue {
+        background-color: $blue;
+    }
+    &.red {
+        background-color: $red;
+    }
+    h1.big {
+        // color: $white;
+        margin: 0;
+    }
+}
+.h-card-links {
+    margin: 16px auto;
+    list-style: none;
+    li {
+        display: inline-block;
+        padding: 0 12px;
+        font-size: 1em;
+        line-height: 1em;
+        position: relative;
+        .io {
+            margin-right: 6px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 1px;
+            height: 16px;
+            top: 0;
+            background-color: $white;
+            @include opacity(.4);
+        }
+        &:first-child {
+            padding-left: 0;
+        }        
+        &:last-child {
+            &::after {
+                display: none;
+            }
+            padding-right: 0;
+        }
+    }
+}
+.trailing-butts {
+    margin: 12px 0;
+    .btn {
+        font-weight: 600;
+        color: $grayLight;
+        &:hover {
+            color: $grayDark;
+            .io {
+                content: $grayDark;
+            }
+        }
+        .io {
+            color: $grayLight;
+        }
+    }
+}
+.core-footer {
+    position: absolute;
+    bottom: 24px;
+    width: 100%;
+    text-align: center;
+    .footer-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .toes {
+        color: $grayLight;
+        display: inline-block;
+        margin: 0 12px;
+    }
+}
+.reading-block {
+    font-family: $sansFontFamily;
+    font-size: 1.2em;
+    line-height: 1.1em;
+    font-weight: 400;
+    margin: 0 auto;
+    max-width: 600px;
+    // font-style: italic;
+
+}
+.static-subhead {
+    @extend .smallReadingText;
+    color: $gray;
+}
+
+.static-modified {
+    font-size: 1.1em;
+    display: block;
+    border: solid 1px darken($mushroom, 2%);
+    @include border-radius($boxBorderRadius);
+    background-color: $mushroom;
+    color: $grayLight;
+    padding: 0 12px;
+    height: 42px;
+    line-height: 42px;
+    margin: 8px 0 24px;
+    a {
+        &:hover {
+            color: $blue;
+        }
+    }
+    .io {
+        margin: 0 4px 0;
+        font-size: 20px;
+    }
+}
+
+.static-header {
+    padding: 140px 0 48px;
+    z-index: 100;
+    &.head-fixed {
+        position: fixed;
+        width: 100%;
+        // top: calc("-63vh - 50px + 120px");
+    }
+    &.tight {
+        padding-bottom: 0;
+    }
+    .intro {
+        font-size: 2.1em;
+        line-height: 1.2em;
+        margin: 32px 0 12px;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+    }
+    &.moderation {
+        margin-top: 120px;
+    }
+}
+tr.story td.open{
+    position: relative;
+}
+.permalink {
+    padding: 12px;
+    right: 0;
+    bottom: initial;
+    top: -60px;
+    border: solid 2px $gray;
+    &:before, &:after {
+        display: none;
+    }
+}
+// Static card pages
+.card-standfirst {
+    @extend .subheadText;
+    color: $white;
+}
+
+.soc-hangers {
+    a {
+        opacity: .4;
+        text-decoration: none;
+        display: inline;
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+    .io {
+        font-size: 1.25em;
+        line-height: 1.75em;
+        padding: 0 6px;
+        text-align: center;
+    }
+}
+.card-content {
+    width: 100%;
+    margin: -200px auto 0;
+    position: absolute;
+    height: 400px;
+    top: 50%;
+}
+.card-header {
+    font-weight: 600;
+    font-size: 2.7em;
+    line-height: 1.15em;
+    margin: 0 0 8px;
+    color: $white;
+}
+.cta-heading {
+    font-weight: 700;
+    font-size: 2.1em;
+    margin: 0 0 12px;
+    line-height: 1.15em;
+    color: rgba(255,255,255,.88);
+}
+.inline-bullets {
+    list-style: none;
+    li {
+        margin: 0 0 2px 16px;
+        &:before {
+            font-family: $ioIcon;
+              content: "\e931";
+              margin-right: 10px;
+              vertical-align: middle;
+              line-height: 26px;
+              color: $grayLight;
+        }
+    }
+}
+
+.col-subhead {
+    margin: 48px 0 6px;
+}
+.landing-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-top: -50px;
+    margin-left: -100px;
+    .heading {
+        color: $white;
+        text-align: center;
+        margin: 0 0 18px;
+        .ico {
+            font-size: 4em;
+        }
+    }
+}
+.dash-logo {
+    width: 171px;
+    height: 70px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 -8px;
+    @include opacity(.7);
+}
+.brand-ident {
+    font-weight: 900;
+    @include opacity(.8);
+    font-size: 1.15em;
+    margin: 8px 0 0;
+    &.white {
+        color: $white;
+    }
+    color: $grayDark;
+}
+.brand-subtext {
+    &.tiny {
+        font-size: 0.8em;
+        @include opacity(.35);
+        &.white {
+            color: $white;            
+        }
+        color: $gray;
+    }
+}
+.landing-hero-background {
+    width: 100%;
+    display: block;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;        
+    overflow: hidden;
+    @include transform(translateZ(0));
+    background: $grayDarker;
+}   
+

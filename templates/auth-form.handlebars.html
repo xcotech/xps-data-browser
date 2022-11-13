@@ -1,0 +1,93 @@
+    <div class="login-frame loginFrame">
+
+        <div class="auth-intro authIntro centered active">
+            <div class="blurb-text intro-item introItem">{{{title}}}</div>                      
+        </div>  
+    
+        <!-- Auth message block -->
+        <div class="auth-message authMessage{{#if messageMode}}active{{/if}}"></div>
+
+        <!-- Auth forms -->
+        <form class="auth-form authForm {{#if logoutMode}}active{{/if}}" action="/logout" autocomplete="off" autofill="off" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf}}">
+            <button class="btn btn-blue auth-button authButton" type="submit">Log me out</button>
+        </form>
+
+        <form class="auth-form authForm {{#if forgotMode}}active{{/if}}" action="/forgot" autocomplete="off" autofill="off" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf}}">
+            <div class="login-fields">
+                <div class="field-wrapper">
+                    <input autocapitalize="off" autofill="off" autocorrect="off" id="forgot_username" maxlength="255" name="username" type="text" value="" placeholder="Type your email or username" />                                
+                </div>                                
+            </div>
+            <button class="btn btn-blue auth-button authButton" type="submit">{{button}}</button>
+        </form>
+
+        <form class="auth-form authForm {{#if loginMode}}active{{/if}}" action="/login" autocomplete="off" autofill="off" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf}}">
+            <div class="login-fields">
+                <div class="field-wrapper">
+                    <input autocapitalize="off" autofill="off" autocorrect="off" id="username" maxlength="255" name="username" type="text" value="" placeholder="Username or email address" />                                
+                </div>                   
+                <div class="field-wrapper firstPass active">
+                    <input class="naked-login loginPwField bottommost" id="login_pw" maxlength="4096" name="password" type="password" placeholder="Password">
+                </div>                      
+            </div>
+            <button class="btn btn-blue auth-button authButton" type="submit">{{button}}</button>
+        </form>
+
+        <form class="auth-form authForm {{#if resetWithKeyMode}}active{{/if}}" id="resetPassword" action="/reset/{{resetKey}}" autocomplete="off" autofill="off" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf}}">      
+            <div class="login-fields">
+                <div class="field-wrapper firstPass active">
+                    <input class="naked-login loginPwField bottommost" id="reset_pw" maxlength="4096" name="password" type="password" placeholder="Type your new password">
+                </div>
+                <div class="field-wrapper regExtras">
+                    <input class="naked-login loginPwFieldRepeat regbottom" id="reset_pw_repeat" maxlength="4096" name="password2" type="password" placeholder="Enter it again">
+                </div>                     
+            </div>
+            <button class="btn btn-blue auth-button authButton" type="submit">{{button}}</button>
+        </form>
+
+        <!-- Error messages -->
+        <div class="error-messages errorMessages">
+            {{#if error}}<p>We have an error: {{error}}</p>{{/if}}
+        </div>                        
+        <div class="auth-error {{#if error}}active{{/if}} authError">{{error}}</div>
+
+
+    <!-- Footer -->
+    <div class="auth-footer authFooter centered">             
+        <div class="auth-tabs authTabs">
+            {{#if loginMode}}
+
+            {{#if dev}}
+            <div class="api-def apiDef">
+                <div class="api-subhead login">Environment</div>
+                <div class="api-select-container apiSelectContainer">
+                    {{>api-select}}
+                </div> 
+            </div>
+            {{/if}}
+
+<!--             <div tabindex="-1" data-actionbind data-action="changeMode" data-target="forgot" class="white link pseudolink showReset" title="Forgot your password">Forgot your password?</div>  -->
+            {{/if}}
+            {{#if registerMode}}
+            <div tabindex="-1" data-actionbind data-action="changeMode" data-target="login" class="white link pseudolink" title="Already a member">Already a member</div> 
+            {{/if}}
+            {{#if forgotMode}}
+            <div tabindex="-1" data-actionbind data-action="changeMode" data-target="login" class="white link pseudolink" title="Back to sign-in">Back to sign-in</div>
+            {{/if}}
+            {{#if forgotDoneMode}}
+            <div tabindex="-1" data-actionbind data-action="changeMode" data-target="login" class="white link pseudolink" title="Back to sign-in">Back to sign-in</div>
+            {{/if}}            
+            {{#if logoutMode}}
+            <div tabindex="-1" class="white link pseudolink" title="Back to sign-in"><a href="/" data-navigate tabindex="-1" class="white link" title="Back to feed">...or go back to your feed</a></div> 
+            {{/if}}
+        </div>
+<!--         <div class="logoutFoot">
+            <a href="/" data-navigate tabindex="-1" class="white link" title="Back to feed">...or go back to your feed</a> 
+        </div>   -->        
+    </div>
+    {{#if inline}}<button class="btn btn-whiteline cancel-inline-login cancelLogin" data-actionbind data-action="cancelLogin">Cancel</button>{{/if}}
+</div>

@@ -1,0 +1,27 @@
+// Responsive
+@import "vp1320.scss";
+@import "vp1024.scss";
+@import "vp768.scss";
+@import "vp680.scss";
+@import "vp480.scss";
+@import "hovers.scss";  
+
+.Macintosh {
+    .notmac {
+        display: none;
+    }
+    .mac {
+        display: block;
+    }
+    button.mac,
+    label.mac,
+    span.mac {
+        display: inline-block;
+    }
+}
+/*** Print ***/
+@media print {    
+    .noprint, .noprint * {
+        display: none !important;
+    }
+}

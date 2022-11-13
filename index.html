@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="XPS is the world's simplest, most accurate local positioning system for sports.">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
+  
+  <title>XPS Dash</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://xps.xco.io">
+  
+  <meta name="theme-color" content="#fffff">
+  <meta name="mobile-web-app-capable" content="yes"> 
+  <meta name="application-name" content="XPS"> 
+
+  <link rel="icon" sizes="192x192" href="/static/assets/launchers/xps_blue-192.png">  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="XPS">
+
+  <link rel="shortcut icon" href="/static/assets/launchers/xps_blue-96.png">
+  <link rel="apple-touch-icon" href="/static/assets/launchers/xps_blue-96.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="/static/assets/launchers/xps_blue-96.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/static/assets/launchers/xps_blue-192.png">
+  
+  <meta name="msapplication-TileImage" content="/static/assets/launchers/xps_blue-192.png">
+  <meta name="msapplication-TileColor" content="#fffff">
+  <meta name="msapplication-tap-highlight" content="no">
+ 
+  <script>
+    window.ENV = "prod"; 
+    window.PREFIX = "";
+  </script>
+
+  <link rel="stylesheet" type="text/css" media="all" href="/dist/css/main.css" />
+    
+</head>
+<body id="page-base">
+
+    <nav class="navbar navBar noprint" id="navBar" data-view-bind="NavView"></nav> 
+
+    <div class="shell"></div>
+    <div class="menu-container menuContainer"></div>
+    <div class="alerts-container alertsContainer"></div>
+    <div class="auth-container authContainer"></div>    
+
+    <script src="/dist/app.min.js"></script>
+
+    <script id="config">
+      // <![CDATA[
+      if(!window.console || typeof window.console === 'undefined') { window.console = {log: function() {},dir: function() {}};}
+      require.config({
+        config: {
+        main: {
+          loggedInUser: {}
+        }}
+      });
+      // ]]>
+    </script>
+    
+    <script id="main">
+      // <![CDATA[  
+      require(['app'], function(app) {
+        app.initialize({dev:false});
+        require(['main/main'], function (main) {
+
+        });
+      });
+      // ]]>
+    </script>
+
+</body>
+</html>

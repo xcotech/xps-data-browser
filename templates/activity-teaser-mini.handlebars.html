@@ -1,0 +1,22 @@
+<div class="activity-teaser mini activityTeaser" data-id={{id}}>
+<a href="/activity/{{id}}" class="wrapping-anchor" data-navigate>
+	
+	<div class="teaser-head">
+		<div class="activity-user lefty">
+	        <div class="teaser-img-container">
+	            <div class="profile-image small lazyload" data-bg="{{user.thumbnail_url}}"></div>
+	        </div>        
+	        <div class="user-meta">
+	        	<div class="user-name">{{user.full_name}}</div>
+	        </div>
+
+        </div>        
+        <div class="stats righty">
+        	
+        	{{#compare type_definition.start_type 'beep'}}<div class="stat num light">{{decimalPlaces data_summary.reaction_time 3}}</div>{{/compare}}
+        	<div class="stat num main">{{#compare type_definition.activity_type 'sprint'}}{{decimalPlaces data_summary.total_time 2}}s{{/compare}}</div>
+		</div>
+	</div>
+
+</a>
+</div>

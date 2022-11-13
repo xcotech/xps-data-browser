@@ -1,0 +1,140 @@
+//
+// Alerts
+// --------------------------------------------------
+
+body {
+  &.alertOpen {
+    overflow: hidden;
+  }
+}
+.alert-container {
+  position: fixed;
+  z-index: 9999;
+  top: 40%;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.alert-footer {
+      margin: 36px 0 0;
+    padding: 12px 0 0;
+    border-top: solid 1px $grayLighter;
+    display: table;
+    width: 100%;
+    .btn {
+      display: table-cell;
+      width: 50%;
+    }
+}
+// Base styles
+// -------------------------
+
+
+.alert {
+  @extend .hoverAnimate;
+  padding: 18px 24px;
+  margin-bottom: $line-height-computed;
+  border: 1px solid transparent;
+  border-radius: $boxBorderRadius;
+  @include box-shadow(0 0 6px rgba(0,0,0,.175));
+  visibility: visible;
+
+    &.alert-info {
+        @include alert-variant(rgba(0,0,0,.8), $grayDark, $grayLighter);
+    }
+
+  &.alert-losenge {
+    padding: 18px 24px;
+    background-color: rgba(0,0,0,.88);
+    color: $grayLighter;
+    .io {
+      margin-right: 6px;
+      font-size: 26px;
+      color: $grayLighter;
+    }
+  }
+  .prompt-btn-wrapper {
+    margin: 36px 0 0;
+  }
+
+  .centered-alert-foot {
+    width: 100%;
+    margin: 24px 0 0;
+  }
+  
+  .close {
+    position: absolute;
+    bottom: 24px;
+    line-height: 0;
+    right: 3px;
+    color: #919ea5;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    color: $grayLight;
+  }
+
+  .alert-icon {
+    margin: 0 0 12px;
+    display: block;
+    font-size: 22px;
+    &.blue {
+      color: $blue;
+    }
+    &.gris {
+      color: $grayLighter;
+    }
+  }
+
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing $headings-color
+    color: inherit;
+  }
+  
+  // Provide class for links that match alerts
+  .alert-link {
+    font-weight: 600;
+  }
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+    font-size: 1em;
+    line-height: 1.1em;
+  }
+  
+  > p + p {
+    margin-top: 5px;
+  }
+}
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible {
+  padding-right: (24px);
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-success {
+  @include alert-variant(rgba(255,255,255,.92), rgba(0,0,0,.03), $gray);
+}
+
+.alert-warning {
+  @include alert-variant($red, darken($red, 2%), $white);
+}
+
+
+.alert-title {
+  font-weight: 600;
+}

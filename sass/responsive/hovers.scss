@@ -1,0 +1,418 @@
+// We detect touch and/or mouse events (helpers/TouchDetect.js) to 
+// take our best guess at current user client capabilities - and to
+// assign either a 'touch' or 'no-touch' class to <html>. 
+// (Hover actions only apply beneath .no-touch)
+.no-touch { 
+	/////////////
+	// GENERAL //
+	/////////////
+
+	a:hover { 
+	}
+	h1, h2, h3, h4 {
+	    &:hover {
+	        text-decoration: none;
+	    }
+	}
+
+	/////////////
+	// BUTTONS //
+	/////////////
+	.btn {
+		&:hover {
+			// color: $blue;
+			text-decoration: none;
+			outline: none;
+		}		
+		&.upload-media {
+			&:hover {
+				.io {
+					color: $white;	
+				}
+				background-color: lighten($gray,6%);
+				border-color: $gray;
+				color: $white;
+			}
+		}
+	}
+	.btn-subdued {
+		&:hover {
+			background-color: $blue;
+			color: $white;
+			border-color: darken($blue,2%);
+		}
+	}
+
+	///////////////
+	// MENUS.    //
+	///////////////
+
+
+	.actions-menu {
+		.linklike {
+			&:hover {
+			    cursor: pointer;
+			    text-decoration: none;
+			    background-color: $grayDarker;
+			    color: $blue;					
+				.ico {
+					color: $blue;
+				}			    
+			}
+		}
+	}
+
+	///////////////
+	// DROPDOWNS //
+	///////////////
+
+	// Hover/Focus state
+	.dropdown-menu > li > a, .dropdown-menu > li > .linklike {
+	  &:hover,
+	  &:focus {
+	    cursor: pointer;
+	    text-decoration: none;
+	    color: $black;
+	    background-color: $mushroom;
+	                &.reading {
+	                  color: $blue;
+	                }
+	                // &.twitter {
+	                //   color: $twitter;
+	                // }
+	                // &.facebook {
+	                //   color: $facebook;
+	                // }
+	                // &.reddit {
+	                //   color: $reddit;
+	                // }
+	  }
+	}
+
+	.dropdown-menu > .active > a {
+	  &,
+	  &:hover,
+	  &:focus {
+	    color: $grayDark;
+	    text-decoration: none;
+	    outline: 0;
+	    font-weight: 900;
+	    background-color: $whiteTranslucent;
+	  }
+	}
+	// Disabled state
+	//
+	// Gray out text and ensure the hover/focus state remains gray
+
+	.dropdown-menu > .disabled > a {
+	  &,
+	  &:hover,
+	  &:focus {
+	    color: $grayLighter;
+	  }
+
+	  // Nuke hover/focus effects
+	  &:hover,
+	  &:focus {
+	    text-decoration: none;
+	    background-color: transparent;
+	    background-image: none; // Remove CSS gradient
+	    @include reset-filter();
+	  }
+	}
+
+	.user-drop-container {
+	    .user-menu {
+	        li {
+	        	&:hover {
+	        		color: $grayDark;
+	        		// border-bottom-color: darken($grayLight, 2%);
+	        	}
+	        }        
+	    }
+	}
+
+	/////////////////
+	// NAVIGATION  //
+	/////////////////
+
+	.subhead-tabs {
+	    > li {
+	        &:hover {
+	            cursor: pointer;
+	            .tab-head {
+		            color: $grayDarker;
+		        }
+	        }
+	    }
+	}
+
+	$navHoverOpacity: .94;
+	.navbar {
+		.homey {
+		    &:hover {
+		    	text-decoration: none;
+		    	@include opacity(1);
+		    }
+		}
+	    .nav-el {
+	    	&.create-new {
+	    		&:hover {
+	    			.btn-create {
+					  @include button-variant($white, $blueTranslucent, darken($blueTranslucent, 2%)); 
+					}
+	    		}
+	    	}
+	        &.is-me {
+	        	&:hover {
+		            @include opacity(1);
+		        }
+	        }
+	    	.profile-image {
+	    		&:hover {
+	    			cursor:  pointer
+	    		}
+	    	}
+	        .nav-but {
+	            &:hover {
+					text-decoration: none;
+					@include opacity($navHoverOpacity);
+	                cursor: pointer;
+	            }
+	        }
+	    }
+	}
+	.stacked-tabs {
+	    li {
+	        &:hover {
+	        	cursor: pointer;
+	        	background-color: $grayLighter;
+	        }
+	    }	
+	}
+
+	//////////////////
+	// PLOTS.       //
+	//////////////////
+
+	.selector-container {
+	    .select-type {
+	    	.select-head {
+	    		&:hover {
+	    			cursor: pointer;
+		    		background-color: $blue;
+		    		color: $white;
+		    	}
+	    	}
+	    	.select-sub {
+	    		&:hover {
+	    			cursor: pointer;
+		    		background-color: $blue;
+		    		color: $grayLighter;
+		    	}
+	    	}
+	    }
+	}
+	.act-data-table {
+		.table-row {
+			&:hover {
+				cursor: pointer;
+				// background-color: darken($grayLighter, 3%);
+				.metric {
+					// font-weight: 600;
+				}
+			}
+		}
+	}
+	//////////////
+	// PROFILES //
+	//////////////
+
+	.mini-user-teaser {
+		&.link {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	.profile-image-container {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.contact-member-links {
+	    .contact-link {
+	        &:hover {
+	            cursor: pointer;
+	            background-color: $mushroom;
+	            .io {
+	                color: $grayDark;
+	            }
+	        }
+	    }
+	}
+	.profile-settings-image {  
+	    &:hover {
+	        cursor: pointer;
+	        &:before {
+	        	@include opacity(.45);
+	        }
+	        &:after {
+	            @include opacity(.86);
+	        }
+	    }
+	}	
+	.recent-profile-pics {
+	    .profile-image {
+			&:hover { 
+				@include scale(1.1, 1.1);
+			}
+		}
+	}
+
+	///////////////////////
+	//   NOTIFS + FEEDS  //
+	///////////////////////
+
+	.notification-item {
+	    .texty {
+	        .verb {
+	        	&:hover {
+	        		border-bottom: none;
+	        		text-decoration: none;
+	        		color: $blue;
+	        	}
+	        }
+	    }
+	}
+
+
+	//////////////
+	//   MISC  //
+	/////////////
+	.page-card {
+		.more-next {
+			&:hover {
+				cursor: pointer;
+				@include opacity(1);
+			}
+		}
+	}
+	.inline-linklike {
+	    &:hover {
+	        cursor: pointer;
+	        text-decoration: inherit;
+	        color: inherit;
+	    }    
+	}
+	.static-crumb {
+		.crumb-current {
+	        &:hover {
+	            cursor: pointer;
+	            color: $grayDarker;
+	        }			
+		}
+	    .crumb-link {
+	        &:hover {
+	            cursor: pointer;
+	            color: $blue;
+	        }
+	    }
+	}
+	.full-card-header .card-footer .btn {
+		&:hover {
+			@include opacity(1);
+		}
+	}
+	.btn-transparent {
+	    &.do-search {
+	        &:hover {
+	          cursor: pointer;
+	          color: $blue;
+	        }
+	    }
+		&.overlay {
+			&:hover {
+				color: $white;
+			}
+		}
+	}	  
+	.minor-tabs {
+		.tab-items {
+			li {
+				&:hover {
+					cursor: pointer;
+				}	  
+			}
+		}
+	}
+	.sub-nav {
+		.nav-items {     
+	        .nav-tab {
+	            &:hover {
+	            	cursor: pointer;
+	            	color: $grayDark;
+	            }
+	            &.active {
+	            	&:hover {
+	            		color: darken($blue, 4%);
+	            	}
+	            }
+	        }
+	    }
+	}
+	.pseudolink {
+		&:hover {
+			cursor: pointer;
+		}
+	    &.white {
+	        &:hover {
+	        	color: $white;
+	        }
+	    }
+	}
+	.reg-trailing-links {
+	    .h-link {
+	        &:hover {
+	            color: $white;
+	        }
+	    }
+	}
+	.nar-o-links {
+	    &.overlay {
+	        li {
+	        	&:hover {
+		            color: $whiteTranslucent;
+		            border-bottom: solid 1px rgba(255,255,255,.1);
+		        }
+	        }
+	    }
+	    li {
+	        &:hover {
+	            color: $grayDark;
+	            border-bottom-color: $grayLight;
+	        }
+		}
+	}
+
+	.modal-content {    
+	    .cm-obj-name {
+	        &:hover {
+	            color: $blue;
+	        }	
+	    }
+	}
+	.group-definition {
+		&:hover {
+			cursor: pointer;
+			.group-meta-item {
+				&.type, &.start, &.dist {
+					background-color: $grayDark;
+					color: $white;
+				}
+			}
+		}
+	}
+
+} // end

@@ -1,0 +1,20 @@
+.sub-nav {
+    position: absolute;
+    top: $navbarHeight;
+    height: $navbarHeight - 8;
+    left: 0;
+    right: 0;
+    background-color: darken($grayLighter, 10%);
+    line-height: $navbarHeight - 8;
+    padding: 0 24px;
+    .subnav-item {
+    	display: inline-block;
+    	margin-left: 12px;
+    	&:first-child {
+    		margin-left: 0;
+    	}
+    }
+    .session-name {
+        font-weight: 600;
+    }
+}

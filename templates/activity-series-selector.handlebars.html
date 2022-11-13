@@ -1,0 +1,51 @@
+<div class="series-selector seriesSelector">
+	<div class="inner-selector center-column">
+		<div class="selector-blurb">Choose data fields to plot on the time series</div>
+		<div class="select-type">
+			<div class="type-header">
+				<div class="select-head seriesSelect{{#inArray series 'distanceM'}} selected{{/inArray}}" data-series="distanceM">Position</div>
+			</div>
+			<div class="select-sub seriesSelect{{#inArray series 'posM.x'}} selected{{/inArray}}" data-series="posM.x">x</div>
+			<div class="select-sub seriesSelect{{#inArray series 'posM.y'}} selected{{/inArray}}" data-series="posM.y">y</div>
+			<!-- <div class="select-sub seriesSelect{{#inArray series 'posM.z'}} selected{{/inArray}}" data-series="posM.z">z</div> -->
+		</div>	
+		<div class="select-type">
+			<div class="type-header">
+				<div class="select-head seriesSelect{{#inArray series 'velocityMPS'}} selected{{/inArray}}" data-series="velocityMPS">Velocity</div>
+			</div>
+			<div class="select-sub seriesSelect{{#inArray series 'velMPS.x'}} selected{{/inArray}}" data-series="velMPS.x">x</div>
+			<div class="select-sub seriesSelect{{#inArray series 'velMPS.y'}} selected{{/inArray}}" data-series="velMPS.y">y</div>
+			<!-- <div class="select-sub seriesSelect{{#inArray series 'velMPS.z'}} selected{{/inArray}}" data-series="velMPS.z">z</div> -->
+		</div>	
+		<div class="select-type">
+			<div class="type-header">
+				<div class="select-head seriesSelect{{#inArray series 'accBodyMPS2'}} selected{{/inArray}}" data-series="accBodyMPS2">Acceleration</div>
+			</div>
+			<div class="select-sub seriesSelect{{#inArray series 'accBodyMPS2.x'}} selected{{/inArray}}" data-series="accBodyMPS2.x">x</div>
+			<div class="select-sub seriesSelect{{#inArray series 'accBodyMPS2.y'}} selected{{/inArray}}" data-series="accBodyMPS2.y">y</div>
+			<div class="select-sub seriesSelect{{#inArray series 'accBodyMPS2.z'}} selected{{/inArray}}" data-series="accBodyMPS2.z">z</div>
+		</div>
+		<div class="select-type">
+			<div class="type-header">
+				<div class="select-head seriesSelect{{#inArray series 'gyroBodyDegPS.x'}} selected{{/inArray}}" data-series="velocityMPS">Ang. velocity</div>
+			</div>
+			<div class="select-sub seriesSelect{{#inArray series 'gyroBodyDegPS.x'}} selected{{/inArray}}" data-series="gyroBodyDegPS.x">x</div>
+			<div class="select-sub seriesSelect{{#inArray series 'gyroBodyDegPS.y'}} selected{{/inArray}}" data-series="gyroBodyDegPS.y">y</div>
+			<div class="select-sub seriesSelect{{#inArray series 'gyroBodyDegPS.z'}} selected{{/inArray}}" data-series="gyroBodyDegPS.z">z</div>
+		</div>
+		<div class="select-type">
+			<div class="type-header">
+				<div class="select-head seriesSelect{{#inArray series 'splits'}} selected{{/inArray}}" data-series="splits">Splits</div>
+			</div>
+		</div>
+		<div class="select-type">
+			<div class="type-header">
+				<div class="select-head seriesSelect{{#inArray series 'strides'}} selected{{/inArray}}" data-series="strides">Strides</div>
+			</div>
+			<div class="select-sub seriesSelect{{#inArray series 'stride_contact'}} selected{{/inArray}}" data-series="stride_contact">Contact time</div>
+			<div class="select-sub seriesSelect{{#inArray series 'stride_length'}} selected{{/inArray}}" data-series="stride_length">Stride length</div>
+			<div class="select-sub seriesSelect{{#inArray series 'stride_frequency'}} selected{{/inArray}}" data-series="stride_frequency">Frequency</div>
+			<div class="select-sub seriesSelect{{#inArray series 'stride_side'}} selected{{/inArray}}" data-series="stride_side">Side (L/R)</div>
+		</div>
+	</div>
+</div>

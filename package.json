@@ -1,0 +1,31 @@
+{
+  "name": "xps-dash-frontend-processors",
+  "version": "1.0.0",
+  "description": "Frontend processors for xps-dash",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-minify": "^0.5.0",
+    "grunt": "^1.0.3",
+    "grunt-cache-bust": "^1.7.0",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-replace": "^1.0.1",
+    "grunt-sass": "^3.0.2",
+    "grunt-shell": "^2.1.0",
+    "node-sass": "^4.9.4",
+    "npm": "^6.4.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "XCO Tech Inc",
+  "license": "ISC"
+}

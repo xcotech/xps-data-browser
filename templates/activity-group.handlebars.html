@@ -1,0 +1,18 @@
+<div class="activity-group center-column activityGroup">
+
+	<div class="group-definition gotoGroup" data-id={{type_hash}}>
+		<div class="group-meta-item type">{{type_definition.activity_type}}</div>
+		{{#compare type_definition.activity_type 'jump'}}
+			<div class="group-meta-item orientation">{{type_definition.orientation}}</div>
+		{{else}}
+			<div class="group-meta-item start">{{type_definition.start_type}} start</div>			
+			<div class="group-meta-item dist">{{type_definition.distance}}m</div>
+		{{/compare}}
+		<div class="group-meta-item count">{{activities.length}} activit{{pluralize activities.length "y" "ies"}}</div>
+	</div>
+
+		{{#each activities}}
+			{{>activity-teaser-mini}}
+		{{/each}}
+	
+</div>
